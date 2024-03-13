@@ -1,0 +1,15 @@
+<main>
+
+    <h1>Runaround</h1>
+
+  <button (click)="clockwise()">CLOCKWISE</button>
+  <button (click)="counterClockwise()">COUNTER-CLOCKWISE</button>
+
+  <section>
+    <div [@moveBoxes]="positions[0]"></div>
+    <div [@moveBoxes]="positions[1]"></div>
+    <div [@moveBoxes]="positions[2]"></div>
+    <div [@moveBoxes]="positions[3]"></div>
+  </section>
+
+</main>

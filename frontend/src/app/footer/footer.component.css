@@ -1,0 +1,17 @@
+footer {
+    color: white;
+    padding: 8px 12px;
+    background-color: #1976d2;
+    text-align: right;
+}
+
+footer h6 {
+    margin: 0 0 .5em 0;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 12px;
+    font-style: italic;
+}

@@ -1,0 +1,14 @@
+header {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 12px 0 4px 0;
+    background-color: #1976d2;
+}
+
+header img {
+    height: 60px;
+    vertical-align: middle;
+    margin: 0px 24px;
+}
