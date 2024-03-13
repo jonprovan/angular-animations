@@ -2,4 +2,14 @@
     <h1>
         Sliding Puzzle
     </h1>
+
+    <section>
+
+        @for (num of nums; track $index) {
+            <div (click)="slide($index)" [@moveBlocks]="nums[$index][1]">
+                <span>{{ num[0] }}</span>
+            </div>
+        }
+
+    </section>
 </main>
