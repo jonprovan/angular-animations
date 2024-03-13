@@ -5,9 +5,9 @@
 
     <section>
 
-        @for (num of nums; track $index) {
-            <div (click)="slide($index)" [@moveBlocks]="nums[$index][1]">
-                <span>{{ num[0] }}</span>
+        @for (tile of tiles; track $index) {
+            <div (click)="slide($index, tile[1])" [@moveTile]="tiles[$index][1]" [class]="'slot' + $index">
+                <!-- <span>{{ tile[0] }}</span> -->
             </div>
         }
 

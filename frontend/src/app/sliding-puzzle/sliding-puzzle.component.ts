@@ -8,25 +8,25 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   templateUrl: './sliding-puzzle.component.html',
   styleUrl: './sliding-puzzle.component.css',
   animations: [
-    trigger('moveBlocks', [
-      state('p1', style({top: '0px', left: '0px'})),
-      state('p2', style({top: '0px', left: '100px'})),
-      state('p3', style({top: '0px', left: '200px'})),
-      state('p4', style({top: '0px', left: '300px'})),
-      state('p5', style({top: '100px', left: '0px'})),
-      state('p6', style({top: '100px', left: '100px'})),
-      state('p7', style({top: '100px', left: '200px'})),
-      state('p8', style({top: '100px', left: '300px'})),
-      state('p9', style({top: '200px', left: '0px'})),
-      state('p10', style({top: '200px', left: '100px'})),
-      state('p11', style({top: '200px', left: '200px'})),
-      state('p12', style({top: '200px', left: '300px'})),
-      state('p13', style({top: '300px', left: '0px'})),
-      state('p14', style({top: '300px', left: '100px'})),
-      state('p15', style({top: '300px', left: '200px'})),
-      state('p16', style({top: '300px', left: '300px'})),
+    trigger('moveTile', [
+      state('1', style({top: '0px', left: '0px'})),
+      state('2', style({top: '0px', left: '100px'})),
+      state('3', style({top: '0px', left: '200px'})),
+      state('4', style({top: '0px', left: '300px'})),
+      state('5', style({top: '100px', left: '0px'})),
+      state('6', style({top: '100px', left: '100px'})),
+      state('7', style({top: '100px', left: '200px'})),
+      state('8', style({top: '100px', left: '300px'})),
+      state('9', style({top: '200px', left: '0px'})),
+      state('10', style({top: '200px', left: '100px'})),
+      state('11', style({top: '200px', left: '200px'})),
+      state('12', style({top: '200px', left: '300px'})),
+      state('13', style({top: '300px', left: '0px'})),
+      state('14', style({top: '300px', left: '100px'})),
+      state('15', style({top: '300px', left: '200px'})),
+      state('16', style({top: '300px', left: '300px'})),
       transition('* => *', [
-        animate('1s ease-in-out')
+        animate('0.5s ease-in-out')
       ]
       )
     ])
@@ -34,46 +34,62 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 })
 export class SlidingPuzzleComponent {
 
-  nums: any[][] = [
-    [1, 'p1'], 
-    [2, 'p2'], 
-    [3, 'p3'], 
-    [4, 'p4'], 
-    [5, 'p5'], 
-    [6, 'p6'], 
-    [7, 'p7'], 
-    [8, 'p8'], 
-    [9, 'p9'], 
-    [10, 'p10'], 
-    [11, 'p11'], 
-    [12, 'p12'], 
-    [13, 'p13'], 
-    [14, 'p14'], 
-    [15, 'p15']
+  // content and starting positions for tiles
+  tiles: any[][] = [
+    [1, 1], 
+    [2, 2], 
+    [3, 3], 
+    [4, 4], 
+    [5, 5], 
+    [6, 6], 
+    [7, 7], 
+    [8, 8], 
+    [9, 9], 
+    [10, 10], 
+    [11, 11], 
+    [12, 12], 
+    [13, 13], 
+    [14, 14], 
+    [15, 15]
   ]
 
-  grid: any[][][] = [
-    [
-      [1, 'p1'], [1, 'p2'], [1, 'p3'], [1, 'p4'], 
-    ],
-    [
-      [1, 'p5'], [1, 'p6'], [1, 'p7'], [1, 'p8']
-    ],
-    [
-      [1, 'p9'], [1, 'p10'], [1, 'p11'], [1, 'p12']
-    ],
-    [
-      [1, 'p13'], [1, 'p14'], [1, 'p15'], [0, 'p16']
-    ],
-    
+  // filled status and position labels for grid slots
+  grid: number[][] = [
+    [1, 1], [1, 2], [1, 3], [1, 4], 
+    [1, 5], [1, 6], [1, 7], [1, 8],
+    [1, 9], [1, 10], [1, 11], [1, 12],
+    [1, 13], [1, 14], [1, 15], [0, 16]
   ]
 
-  slide(i: number) {
-    for (let row of this.grid) {
-      for (let column of row) {
-        if (this.nums[i][1] === 'p15') {
-          this.nums[i][1] = 'p16';
-        }
+  // tile positions that can't move left/right
+  noLeft: number[] = [5, 9, 13];
+  noRight: number[] = [4, 8, 12];
+
+  // when you click on a slide
+  slide(i: number, cp: number) {
+
+    // possible slots include above/below, plus left/right unless it wraps around
+    let possibleSlots = [ 
+      this.grid[cp - 5],
+      (!this.noLeft.includes(cp)) ? this.grid[cp - 2] : undefined,
+      (!this.noRight.includes(cp)) ? this.grid[cp] : undefined,
+      this.grid[cp + 3]
+    ];
+
+    for (let slot of possibleSlots) {
+      // check if possible slot exists in the grid and is empty
+      if (slot && !slot[0]) {
+        // hold onto previous position for this tile
+        let previousPosition = this.tiles[i][1];
+
+        // set the viable possible slot to "filled"
+        slot[0] = 1;
+
+        // set the tile's position to the new one
+        this.tiles[i][1] = slot[1];
+
+        // set the old grid position to "empty"
+        this.grid[previousPosition - 1][0] = 0;
       }
     }
   }
