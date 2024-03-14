@@ -6,10 +6,16 @@
     <section>
 
         @for (tile of tiles; track $index) {
-            <div (click)="slide($index, tile[1])" [@moveTile]="tiles[$index][1]" [class]="'slot' + $index">
+            <div (click)="slide($index, tile[1])"
+                 [@moveTile]="tiles[$index][1]" 
+                 [class]="'slot' + $index"
+                 [ngStyle]="{'background-image': 'url(' + puzzleImage + ')' }">
                 <!-- <span>{{ tile[0] }}</span> -->
             </div>
         }
 
     </section>
+
+    <button (click)="switchPuzzleImage(logo)">SKILLSTORM LOGO</button>
+    <button (click)="switchPuzzleImage(mackinator)">MACKINATE!</button>
 </main>

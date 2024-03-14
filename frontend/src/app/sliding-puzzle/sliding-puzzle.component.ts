@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sliding-puzzle',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './sliding-puzzle.component.html',
   styleUrl: './sliding-puzzle.component.css',
   animations: [
@@ -33,6 +34,10 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   ]
 })
 export class SlidingPuzzleComponent {
+  // background images
+  puzzleImage = "../../assets/ss-logo.png"
+  logo: string = "../../assets/ss-logo.png";
+  mackinator: string = "../../assets/mackinator.png"
 
   // content and starting positions for tiles
   tiles: any[][] = [
@@ -92,6 +97,10 @@ export class SlidingPuzzleComponent {
         this.grid[previousPosition - 1][0] = 0;
       }
     }
+  }
+
+  switchPuzzleImage(image: string) {
+    this.puzzleImage = image;
   }
 
 }
