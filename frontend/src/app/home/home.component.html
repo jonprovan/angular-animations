@@ -2,4 +2,13 @@
     <h1>
         Welcome to Angular Animations!
     </h1>
+
+    <button (click)="addMethod()" [disabled]="!extraMethods[0]">ADD</button>
+
+    <div [@listAppear]="methodList.length">
+        @for (method of methodList; track $index) {
+            <app-method [method]="method"></app-method>
+        }
+    </div>
+
 </main>

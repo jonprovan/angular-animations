@@ -9,13 +9,29 @@
             <div (click)="slide($index, tile[1])"
                  [@moveTile]="tiles[$index][1]" 
                  [class]="'slot' + $index"
-                 [ngStyle]="{'background-image': 'url(' + puzzleImage + ')' }">
-                <!-- <span>{{ tile[0] }}</span> -->
+                 [ngStyle]="{ 'background-image': 'url(' + puzzleImage + ')',
+                              'background-color': 'hsl(0, 0%, ' + ($index * 5 + 15) + '%)' }">
+                 <span *ngIf="numbersAreVisible">{{ $index + 1 }}</span>
             </div>
         }
 
     </section>
 
-    <button (click)="switchPuzzleImage(logo)">SKILLSTORM LOGO</button>
-    <button (click)="switchPuzzleImage(mackinator)">MACKINATE!</button>
+    <aside>
+        <h2>Switch Image</h2>
+        <div>
+            <button (click)="switchPuzzleImage(logo)">SWIRL</button>
+            <button (click)="switchPuzzleImage(mackinator)">BRAZIL</button>
+            <button (click)="switchPuzzleImage(hanson)">GOAT</button>
+            <button (click)="switchPuzzleImage('')">COUNT</button>
+        </div>
+
+        <h2>Board Control</h2>
+        <div>
+            <button (click)="shuffleTiles()">SHUFFLE</button>
+            <button (click)="resetTiles()">RESET</button>
+        </div>
+    </aside>
+
+    
 </main>

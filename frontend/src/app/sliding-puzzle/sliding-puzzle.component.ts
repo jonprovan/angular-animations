@@ -34,13 +34,33 @@ import { CommonModule } from '@angular/common';
   ]
 })
 export class SlidingPuzzleComponent {
-  // background images
-  puzzleImage = "../../assets/ss-logo.png"
+  // background content
+  puzzleImage = "../../assets/ss-logo.png";
   logo: string = "../../assets/ss-logo.png";
-  mackinator: string = "../../assets/mackinator.png"
+  mackinator: string = "../../assets/mackinator.png";
+  hanson: string = "../../assets/hanson.jpg"
+  numbersAreVisible: boolean = false;
 
   // content and starting positions for tiles
   tiles: any[][] = [
+    [1, 1], 
+    [2, 2], 
+    [3, 3], 
+    [4, 4], 
+    [5, 5], 
+    [6, 6], 
+    [7, 7], 
+    [8, 8], 
+    [9, 9], 
+    [10, 10], 
+    [11, 11], 
+    [12, 12], 
+    [13, 13], 
+    [14, 14], 
+    [15, 15]
+  ]
+
+  tilesReset: any[][] = [
     [1, 1], 
     [2, 2], 
     [3, 3], 
@@ -101,6 +121,24 @@ export class SlidingPuzzleComponent {
 
   switchPuzzleImage(image: string) {
     this.puzzleImage = image;
+    image ? this.numbersAreVisible = false : this.numbersAreVisible = true;
+  }
+
+  shuffleTiles() {
+    this.tiles = this.tiles
+                     .map(value => ({ value, sort: Math.random() }))
+                     .sort((a, b) => a.sort - b.sort)
+                     .map(({ value }) => value);
+  }
+
+  resetTiles() {
+    this.tiles = this.tilesReset;
+    for (let tile of this.tiles) {
+      tile[1] = tile[0];
+    }
+    for (let slot of this.grid) {
+      slot[1] === 16 ? slot[0] = 0 : slot[0] = 1;
+    }
   }
 
 }

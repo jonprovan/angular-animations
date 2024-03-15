@@ -8,7 +8,7 @@ body {
 main {
     min-height: 700px;
     position: relative;
-    padding: 24px;
+    padding: 12px 24px;
 }
 
 h1 {

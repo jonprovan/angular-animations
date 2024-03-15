@@ -1,0 +1,24 @@
+article {
+    width: 300px;
+    background-color: #c0dffe;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 4px;
+}
+
+article div {
+    border-left: 4px solid #1976d2;
+    padding-left: 8px;
+}
+
+article h2 {
+    font-size: 16px;
+    margin: 0 0 .25em 0;
+    color: #800;
+}
+
+article p {
+    margin: 0 0 0 1em;
+    font-size: 12px;
+    font-style: italic;
+}
