@@ -1,15 +1,41 @@
 section {
+    display: inline-block;
     width: 500px;
     height: 500px;
-    margin: 24px;
     border: 1px solid black;
     position: relative;
 }
 
-div {
+section > div {
     width: 50px;
     height: 50px;
     display: inline-block;
     background-color: blueviolet;
     position: absolute;
+}
+
+aside {
+    float: right;
+    width: 120px;
+}
+
+aside h2 {
+    font-size: 20px;
+    margin: 0 0 .5em 0;
+    color: rgb(172, 18, 18);
+    text-align: center;
+}
+
+aside div {
+    margin-bottom: 24px;
+}
+
+aside div button {
+    width: 120px;
+    height: 100px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    color: #1976d2;
 }

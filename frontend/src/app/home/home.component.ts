@@ -28,7 +28,7 @@ export class HomeComponent {
   methodList: string[][] = [
     ['trigger()', 'Creates a named animation trigger, containing a list of state() and transition() entries.'],
     ['state()', 'Declares an animation state within a trigger attached to an element.'],
-    ['style()', 'Declares a key/value object containing CSS properties/styles.'],
+    // ['style()', 'Declares a key/value object containing CSS properties/styles.'],
     ['transition()', 'Declares an animation transition which is played when a certain specified condition is met.'],
     ['animate()', 'Defines an animation step that combines styling information with timing information.']
   ]
@@ -42,6 +42,26 @@ export class HomeComponent {
 
   addMethod() {
     this.methodList.push(this.extraMethods.shift() || []);
+  }
+
+  removeMethod() {
+    this.extraMethods.unshift(this.methodList.pop() || []);
+  }
+
+  addAllMethods() {
+    let length = this.extraMethods.length;
+
+    for (let i = 0; i < length; i++) {
+      this.addMethod();
+    }
+  }
+
+  removeAllMethods() {
+    let length = this.methodList.length;
+
+    for (let i = 0; i < length; i++) {
+      this.extraMethods.unshift(this.methodList.pop() || []);
+    }
   }
   
 }

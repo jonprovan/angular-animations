@@ -33,6 +33,14 @@ export class RunaroundComponent {
     this.positions = [ this.positions[3], ...this.positions.slice(0, 3) ];
   }
 
+  spread() {
+    this.positions = [ 'tr', 'br', 'bl', 'tl' ];
+    setTimeout(() => {
+      this.positions = [ 'tl', 'tr', 'br', 'bl' ];
+    }, 1);
+    
+  }
+
 
 }
 

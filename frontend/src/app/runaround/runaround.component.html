@@ -1,15 +1,20 @@
 <main>
 
-    <h1>Runaround</h1>
-
-  <button (click)="clockwise()">CLOCKWISE</button>
-  <button (click)="counterClockwise()">COUNTER-CLOCKWISE</button>
-
+  <h1>Runaround</h1>
+  
   <section>
-    <div [@moveBoxes]="positions[0]"></div>
-    <div [@moveBoxes]="positions[1]"></div>
-    <div [@moveBoxes]="positions[2]"></div>
-    <div [@moveBoxes]="positions[3]"></div>
+    @for (box of [0, 1, 2, 3]; track $index) {
+      <div [@moveBoxes]="positions[box]"></div>
+    }
   </section>
+
+  <aside>
+    <h2>Controls</h2>
+      <div>
+        <button (click)="spread()">SPREAD</button>
+        <button (click)="clockwise()">CLOCKWISE</button>
+        <button (click)="counterClockwise()">COUNTER-CLOCKWISE</button>
+      </div>
+  </aside>
 
 </main>
