@@ -4,7 +4,8 @@
     </h1>
 
     <section>
-
+        <!-- each tile from the array has dynamic content -->
+        <!-- method function, tracking, color, image slice, number -->
         @for (tile of tiles; track $index) {
             <div (click)="slide($index, tile[1])"
                  [@moveTile]="tiles[$index][1]" 

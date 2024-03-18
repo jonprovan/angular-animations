@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+// imported method animations from the Animations Module
 import { trigger, style, animate, transition, query, stagger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { MethodComponent } from '../method/method.component';
@@ -9,6 +10,7 @@ import { MethodComponent } from '../method/method.component';
   imports: [CommonModule, MethodComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
+  // this property sets up the animations for this component
   animations: [
     trigger('listAppear', [
       transition('* => *', [
@@ -25,14 +27,15 @@ import { MethodComponent } from '../method/method.component';
 })
 export class HomeComponent {
 
+  // methods that appear to start
   methodList: string[][] = [
     ['trigger()', 'Creates a named animation trigger, containing a list of state() and transition() entries.'],
     ['state()', 'Declares an animation state within a trigger attached to an element.'],
-    // ['style()', 'Declares a key/value object containing CSS properties/styles.'],
     ['transition()', 'Declares an animation transition which is played when a certain specified condition is met.'],
     ['animate()', 'Defines an animation step that combines styling information with timing information.']
   ]
 
+  // methods we can add to the list
   extraMethods: string[][] = [
     ['query()', 'Finds inner elements within the current element that are being animated within a sequence..'],
     ['stagger()', 'Use within an animation query() call to issue a timing gap after each queried item is animated.'],
@@ -40,14 +43,17 @@ export class HomeComponent {
     ['sequence()', 'Defines a list of animation steps to be run sequentially, one by one.']
   ]
 
+  // adding a method to the visible list
   addMethod() {
     this.methodList.push(this.extraMethods.shift() || []);
   }
 
+  // removing a method from the visible list
   removeMethod() {
     this.extraMethods.unshift(this.methodList.pop() || []);
   }
 
+  // adding all methods to the visible list
   addAllMethods() {
     let length = this.extraMethods.length;
 
@@ -56,6 +62,7 @@ export class HomeComponent {
     }
   }
 
+  // removing all methods from the visible list
   removeAllMethods() {
     let length = this.methodList.length;
 

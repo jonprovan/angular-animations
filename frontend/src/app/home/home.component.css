@@ -32,3 +32,8 @@ aside div button {
     cursor: pointer;
     color: #1976d2;
 }
+
+aside div button:disabled {
+    color: lightgray;
+    cursor: default;
+}

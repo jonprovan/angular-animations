@@ -8,24 +8,25 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   templateUrl: './sliding-puzzle.component.html',
   styleUrl: './sliding-puzzle.component.css',
+  // 16 different states for each of the grid positions
   animations: [
     trigger('moveTile', [
-      state('1', style({top: '0px', left: '0px'})),
-      state('2', style({top: '0px', left: '100px'})),
-      state('3', style({top: '0px', left: '200px'})),
-      state('4', style({top: '0px', left: '300px'})),
-      state('5', style({top: '100px', left: '0px'})),
-      state('6', style({top: '100px', left: '100px'})),
-      state('7', style({top: '100px', left: '200px'})),
-      state('8', style({top: '100px', left: '300px'})),
-      state('9', style({top: '200px', left: '0px'})),
-      state('10', style({top: '200px', left: '100px'})),
-      state('11', style({top: '200px', left: '200px'})),
-      state('12', style({top: '200px', left: '300px'})),
-      state('13', style({top: '300px', left: '0px'})),
-      state('14', style({top: '300px', left: '100px'})),
-      state('15', style({top: '300px', left: '200px'})),
-      state('16', style({top: '300px', left: '300px'})),
+      state('1', style({ top: '0px', left: '0px' })),
+      state('2', style({ top: '0px', left: '100px' })),
+      state('3', style({ top: '0px', left: '200px' })),
+      state('4', style({ top: '0px', left: '300px' })),
+      state('5', style({ top: '100px', left: '0px' })),
+      state('6', style({ top: '100px', left: '100px' })),
+      state('7', style({ top: '100px', left: '200px' })),
+      state('8', style({ top: '100px', left: '300px' })),
+      state('9', style({ top: '200px', left: '0px' })),
+      state('10', style({ top: '200px', left: '100px' })),
+      state('11', style({ top: '200px', left: '200px' })),
+      state('12', style({ top: '200px', left: '300px' })),
+      state('13', style({ top: '300px', left: '0px' })),
+      state('14', style({ top: '300px', left: '100px' })),
+      state('15', style({ top: '300px', left: '200px' })),
+      state('16', style({ top: '300px', left: '300px' })),
       transition('* => *', [
         animate('0.5s ease-in-out')
       ]
@@ -65,6 +66,7 @@ export class SlidingPuzzleComponent {
     [15, 15]
   ]
 
+  // a reset grid to overwrite any changes made by sliding tiles
   tilesReset: number[][] = [
     [1, 1], 
     [2, 2], 
@@ -95,7 +97,7 @@ export class SlidingPuzzleComponent {
   noLeft: number[] = [5, 9, 13];
   noRight: number[] = [4, 8, 12];
 
-  // when you click on a slide
+  // when you click on a tile
   slide(i: number, cp: number) {
 
     // possible slots include above/below, plus left/right unless it wraps around

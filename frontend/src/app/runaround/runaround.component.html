@@ -2,6 +2,7 @@
 
   <h1>Simultaneous</h1>
   
+  <!-- this time, each box tracks its own state -->
   <section>
     @for (box of [0, 1, 2, 3]; track $index) {
       <div [@moveBoxes]="positions[box]">{{ box + 1 }}</div>
