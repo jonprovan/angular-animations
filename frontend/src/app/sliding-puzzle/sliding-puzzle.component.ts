@@ -34,15 +34,20 @@ import { CommonModule } from '@angular/common';
   ]
 })
 export class SlidingPuzzleComponent {
+
+  constructor() {
+    this.tiles = this.tilesReset;
+  }
+
   // background content
-  puzzleImage = "../../assets/ss-logo.png";
+  puzzleImage: string = "../../assets/ss-logo.png";
   logo: string = "../../assets/ss-logo.png";
   mackinator: string = "../../assets/mackinator.png";
   hanson: string = "../../assets/hanson.jpg"
   numbersAreVisible: boolean = false;
 
   // content and starting positions for tiles
-  tiles: any[][] = [
+  tiles: number[][] = [
     [1, 1], 
     [2, 2], 
     [3, 3], 
@@ -60,7 +65,7 @@ export class SlidingPuzzleComponent {
     [15, 15]
   ]
 
-  tilesReset: any[][] = [
+  tilesReset: number[][] = [
     [1, 1], 
     [2, 2], 
     [3, 3], 

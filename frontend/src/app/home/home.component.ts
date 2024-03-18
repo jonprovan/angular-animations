@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { trigger, state, style, animate, transition, query, stagger } from '@angular/animations';
+import { trigger, style, animate, transition, query, stagger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { MethodComponent } from '../method/method.component';
 

@@ -1,0 +1,19 @@
+<main>
+    <h1>Sequence</h1>
+
+    <section>
+       <div [@boxTrack]="direction">&#64;</div>
+    </section>
+
+    <aside>
+    <h2>Controls</h2>
+        <div>
+            <button (click)="switchDirection('default')"
+                    [disabled]="direction === 'default'">RESET</button>
+            <button (click)="switchDirection('forward')"
+                    [disabled]="forwardDisabled">FORWARD</button>
+            <button (click)="switchDirection('backward')"
+                    [disabled]="backwardDisabled">BACKWARD</button>
+        </div>
+    </aside>
+</main>

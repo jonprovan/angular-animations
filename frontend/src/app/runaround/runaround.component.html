@@ -1,17 +1,18 @@
 <main>
 
-  <h1>Runaround</h1>
+  <h1>Simultaneous</h1>
   
   <section>
     @for (box of [0, 1, 2, 3]; track $index) {
-      <div [@moveBoxes]="positions[box]"></div>
+      <div [@moveBoxes]="positions[box]">{{ box + 1 }}</div>
     }
   </section>
 
   <aside>
     <h2>Controls</h2>
       <div>
-        <button (click)="spread()">SPREAD</button>
+        <button (click)="reset()"
+                [disabled]="positions[0] === 'tl'">RESET</button>
         <button (click)="clockwise()">CLOCKWISE</button>
         <button (click)="counterClockwise()">COUNTER-CLOCKWISE</button>
       </div>

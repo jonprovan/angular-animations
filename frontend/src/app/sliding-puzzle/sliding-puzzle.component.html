@@ -20,16 +20,21 @@
     <aside>
         <h2>Switch Image</h2>
         <div>
-            <button (click)="switchPuzzleImage(logo)">SWIRL</button>
-            <button (click)="switchPuzzleImage(mackinator)">BRAZIL</button>
-            <button (click)="switchPuzzleImage(hanson)">GOAT</button>
-            <button (click)="switchPuzzleImage('')">COUNT</button>
+            <button (click)="switchPuzzleImage(logo)"
+                    [disabled]="puzzleImage === logo">SWIRL</button>
+            <button (click)="switchPuzzleImage(mackinator)"
+                    [disabled]="puzzleImage === mackinator">BRAZIL</button>
+            <button (click)="switchPuzzleImage(hanson)"
+                    [disabled]="puzzleImage === hanson">GOAT</button>
+            <button (click)="switchPuzzleImage('')"
+                    [disabled]="puzzleImage === ''">COUNT</button>
         </div>
 
         <h2>Board Control</h2>
         <div>
             <button (click)="shuffleTiles()">SHUFFLE</button>
-            <button (click)="resetTiles()">RESET</button>
+            <button (click)="resetTiles()"
+                    [disabled]="tiles === tilesReset">RESET</button>
         </div>
     </aside>
 
