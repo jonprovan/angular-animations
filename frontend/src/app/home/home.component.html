@@ -3,14 +3,12 @@
         Available Methods
     </h1>
 
-    <section>
-        <!-- whenever the list size changes, the animation triggers -->
-        <div [@listAppear]="methodList.length">
-            <!-- looping through the list of visible methods -->
-            @for (method of methodList; track $index) {
-                <app-method [method]="method"></app-method>
-            }
-        </div>
+    <!-- whenever the list size changes, the animation triggers -->
+    <section [@listAppear]="methodList.length">
+        <!-- looping through the list of visible methods -->
+        @for (method of methodList; track $index) {
+            <app-method [method]="method"></app-method>
+        }
     </section>
 
     <aside>

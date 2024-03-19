@@ -18,7 +18,7 @@ import { trigger, state, style, animate, transition, sequence } from '@angular/a
           animate('.5s ease-in-out', style({ top: '45%', left: '0%' })),
           animate('.5s ease-in-out', style({ top: '90%', left: '0%' })),
           animate('.5s ease-in-out', style({ top: '90%', left: '90%' })),
-          animate('100s', style({ top: '90%', left: '90%' }))
+          animate('1000s', style({ top: '90%', left: '90%' }))
         ])
       ]),
       transition('* => backward', [
@@ -27,8 +27,7 @@ import { trigger, state, style, animate, transition, sequence } from '@angular/a
           animate('.5s ease-in-out', style({ top: '45%', left: '0%' })),
           animate('.5s ease-in-out', style({ top: '45%', left: '45%' })),
           animate('.5s ease-in-out', style({ top: '0%', left: '45%' })),
-          animate('.5s ease-in-out', style({ top: '0%', left: '0%' })),
-          animate('100s', style({ top: '0%', left: '0%' }))
+          animate('.5s ease-in-out', style({ top: '0%', left: '0%' }))
         ])
       ])
     ])
