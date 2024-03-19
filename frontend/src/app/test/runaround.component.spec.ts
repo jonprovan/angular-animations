@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MethodComponent } from './method.component';
+import { RunaroundComponent } from '../runaround/runaround.component';
 
-describe('MethodComponent', () => {
-  let component: MethodComponent;
-  let fixture: ComponentFixture<MethodComponent>;
+describe('RunaroundComponent', () => {
+  let component: RunaroundComponent;
+  let fixture: ComponentFixture<RunaroundComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MethodComponent]
+      imports: [RunaroundComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(MethodComponent);
+    fixture = TestBed.createComponent(RunaroundComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

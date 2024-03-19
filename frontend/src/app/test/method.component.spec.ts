@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SlidingPuzzleComponent } from './sliding-puzzle.component';
+import { MethodComponent } from '../method/method.component';
 
-describe('SlidingPuzzleComponent', () => {
-  let component: SlidingPuzzleComponent;
-  let fixture: ComponentFixture<SlidingPuzzleComponent>;
+describe('MethodComponent', () => {
+  let component: MethodComponent;
+  let fixture: ComponentFixture<MethodComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SlidingPuzzleComponent]
+      imports: [MethodComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(SlidingPuzzleComponent);
+    fixture = TestBed.createComponent(MethodComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -7,7 +7,8 @@ import { trigger, state, style, animate, transition, sequence } from '@angular/a
   imports: [],
   templateUrl: './sequence.component.html',
   styleUrl: './sequence.component.css',
-  // each type of transition triggers a sequence of events
+  // state outlines an individual set of CSS values
+  // here, transitions trigger sequences of events
   animations: [
     trigger('boxTrack', [
       state('default', style({ top: '0%', left: '0%' })),
@@ -45,9 +46,11 @@ export class SequenceComponent {
   // a timeout we can define/cancel
   timeout: any = undefined;
 
-  // button logic to change the box's state/sequence and disable buttons
+  // logic to change the box's state/sequence and enable/disable buttons
   switchDirection(direction: string) {
     this.direction = direction;
+
+    // all of this is just to enable/disable the buttons
     if (direction === 'forward') {
       this.forwardDisabled = true;
       this.timeout = setTimeout(() => {

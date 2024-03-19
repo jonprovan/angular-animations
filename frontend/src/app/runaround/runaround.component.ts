@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
       state('tr', style({ top: '0%', left: '90%' })),
       state('bl', style({ top: '90%', left: '0%' })),
       state('br', style({ top: '90%', left: '90%' })),
+      // this transition covers all changes from one state to another
       transition('* => *', [
         animate('1s ease-in-out')
       ])
