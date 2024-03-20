@@ -1,5 +1,5 @@
 # angular-animations
-All-Star QA Presentation Site Showcasing Angular Animations
+A single-tier frontend website demonstrating various pieces of the Angular Animations module, which provides simple-to-maintain animation functionality based on CSS styles, animation triggers, and maintained TS state.
 
 ## Four Main Components
 All components utilize these methods:
