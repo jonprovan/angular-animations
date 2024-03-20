@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RunaroundComponent } from '../runaround/runaround.component';
+import { RunaroundComponent } from '../simultaneous/simultaneous.component';
 
 describe('RunaroundComponent', () => {
   let component: RunaroundComponent;

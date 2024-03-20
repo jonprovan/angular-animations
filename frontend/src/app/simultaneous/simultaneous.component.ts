@@ -3,11 +3,11 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-simultaneous',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './runaround.component.html',
-  styleUrl: './runaround.component.css',
+  templateUrl: './simultaneous.component.html',
+  styleUrl: './simultaneous.component.css',
   // one state defined for each of the four corners
   animations: [
     trigger('moveBoxes', [
@@ -23,7 +23,7 @@ import { CommonModule } from '@angular/common';
   ]
     
 })
-export class RunaroundComponent {
+export class SimultaneousComponent {
 
   // initial positions for the boxes that maintain each one's state
   positions: string[] = [ 'tl', 'tr', 'br', 'bl' ];
