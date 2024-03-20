@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RunaroundComponent } from '../simultaneous/simultaneous.component';
+import { SimultaneousComponent } from '../simultaneous/simultaneous.component';
 
 describe('RunaroundComponent', () => {
-  let component: RunaroundComponent;
-  let fixture: ComponentFixture<RunaroundComponent>;
+  let component: SimultaneousComponent;
+  let fixture: ComponentFixture<SimultaneousComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RunaroundComponent]
+      imports: [SimultaneousComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(RunaroundComponent);
+    fixture = TestBed.createComponent(SimultaneousComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
