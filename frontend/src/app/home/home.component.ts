@@ -10,7 +10,7 @@ import { MethodComponent } from '../method/method.component';
   standalone: true,
   imports: [CommonModule, MethodComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+  styleUrl: '../css/home.component.css',
   // this property sets up the animations for this component
   animations: [
     trigger('listAppear', [

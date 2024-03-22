@@ -6,7 +6,7 @@ import { trigger, state, style, animate, transition, sequence } from '@angular/a
   standalone: true,
   imports: [],
   templateUrl: './sequence.component.html',
-  styleUrl: './sequence.component.css',
+  styleUrl: '../css/sequence.component.css',
   // state outlines an individual set of CSS values
   // here, transitions trigger sequences of events
   animations: [

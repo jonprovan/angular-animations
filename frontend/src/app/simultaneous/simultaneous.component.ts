@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './simultaneous.component.html',
-  styleUrl: './simultaneous.component.css',
+  styleUrl: '../css/simultaneous.component.css',
   // one state defined for each of the four corners
   animations: [
     trigger('moveBoxes', [

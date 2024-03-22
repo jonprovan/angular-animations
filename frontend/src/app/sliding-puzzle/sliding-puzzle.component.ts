@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './sliding-puzzle.component.html',
-  styleUrl: './sliding-puzzle.component.css',
+  styleUrl: '../css/sliding-puzzle.component.css',
   // 16 different states for each of the grid positions
   animations: [
     trigger('moveTile', [

@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './method.component.html',
-  styleUrl: './method.component.css'
+  styleUrl: '../css/method.component.css'
 })
 export class MethodComponent {
 
